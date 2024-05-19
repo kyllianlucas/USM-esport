@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(/asset/img/bg1.png);
+    background-size: cover;
+    color: #FFF;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-attachment: fixed;
+    margin-bottom: 20px;
+}
+
+.text-white{
+    text-decoration: none;
+}
+.footer-font {
+    font-family: Georgia, serif;
+    color: white;
+}
+
+.footer-font:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+footer {
+    background: #020f20;
+    width: 100%;
+    font-size: 15px;
+    height: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: auto;
+}
+.footer-p {
+    color: white;   
+}
+
+@media (max-width: 600px) {
+    body{
+        background: black!important;
+    }
+    footer {
+        font-size: 13px;
+    }
+}

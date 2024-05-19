@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(/asset/img/bg1.png);
+    background-size: cover;
+    color: #FFF;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-attachment: fixed;
+}
+
+.container-prim {
+    width: 100%;
+    text-align: center;
+}
+ul{
+    padding-left: 0!important;
+    list-style-type: none;
+}
+.list-group {
+    flex-direction: row!important;
+    flex-wrap: wrap; /* Pour passer à une disposition en ligne sur les petits écrans */
+    justify-content: center; /* Pour centrer les éléments sur les petits écrans */
+    margin-top: 2%;
+}
+
+
+.list-group-second {
+    display: inline-flex;
+    flex-direction: row!important;
+    flex-wrap: wrap; /* Pour passer à une disposition en ligne sur les petits écrans */
+    justify-content: center; /* Pour centrer les éléments sur les petits écrans */
+}
+
+.list-group-item {
+    background: #012354!important;
+    width: 270px;
+    height: 270px;
+    border-radius: 50px!important;
+    border: solid 1px #010e1f!important;
+    margin: 15px;
+    opacity: 0.9;
+    color: white!important;
+}
+
+.pic-shop {
+    max-width: 200px;
+    vertical-align: text-top;
+}
+
+.item-network-shop {
+    text-decoration: none;
+    margin: 25px auto;
+    width: 200px;
+    height: 50px;
+    line-height: 2.3;
+    border-radius: 50px;
+    border: solid 1px #dddddd;
+    transition: all 1.5s;
+    font-family: 'Noto Sans JP';
+    font-size: 22px;
+}
+
+.item-network-shop:hover {
+    background: #012354;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+h1{
+    color: white!important;
+}
+
+a{
+    color: white!important;
+    text-decoration: none!important;
+}
+
+@media (max-width: 600px) {
+    body{
+        background: black!important;
+    }
+    .list-group-second{
+        margin-top: 0%;
+    }
+    .list-group-item{
+        width: 177px;
+        height: 200px;
+        margin: 5px!important;
+        padding: 0rem!important;
+        display: flex!important;
+        border-radius: 25px!important;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .pic-shop{
+        max-width: 170px;
+    }
+
+    .item-network-shop{
+        background: #012354!important;
+    }
+}

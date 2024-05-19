@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(/asset/img/bg1.png);
+    background-size: cover;
+    color: #FFF;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-attachment: fixed;
+}
+
+a{
+    text-decoration: none!important;
+}
+
+.container-prim {
+    width: 100%;
+    text-align: center;
+}
+
+.rl-list{
+    margin-top: 75px;
+    flex-wrap: wrap; /* Pour passer à une disposition en ligne sur les petits écrans */
+}
+
+.rl-pic {
+    background: #ff0a1e;
+    width: 200px;
+    height: 500px;
+    margin: 10px;
+    border-radius: 50px;
+}
+
+.texte-image-rl-main,
+.texte-image-rl-purple,
+.texte-image-rl-aca{
+    color: white;
+    opacity: 0;
+    animation: fadeOut 0.3s ease-out;
+}
+
+.rl-pic:hover .texte-image-rl-main,
+.rl-pic:hover .texte-image-rl-purple,
+.rl-pic:hover .texte-image-rl-aca{
+    animation: fadeIn 0.2s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut{
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+.USM {
+    background: url(/asset/img/USMblue.png);
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(1);
+    border: solid 1px grey;
+    transition: all 1.5s;
+}
+
+.USM:hover {
+    filter: grayscale(0);
+    border: solid 1px blue;
+    box-shadow: 0 0 20px blue;
+}
+
+.USMP {
+    background: url(/asset/img/USMpurple.png);
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(1);
+    border: solid 1px grey;
+    transition: all 1.5s;
+}
+
+.USMP:hover {
+    filter: grayscale(0);
+    border: solid 1px purple ;
+    box-shadow: 0 0 20px purple;
+}
+
+.USMY {
+    background: url(/asset/img/USMyellow.png);
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(1);
+    border: solid 1px grey;
+    transition: all 1.5s;
+}
+
+.USMY:hover {
+    filter: grayscale(0);
+    border: solid 1px yellow;
+    box-shadow: 0 0 20px yellow;
+}
+
+
+@media (max-width: 600px) {
+    body{
+        background: black!important;
+    }
+    .rl-pic{
+        width: 100vw;
+        border-radius: 0;
+        margin: 0;
+    }
+    .rl-list{
+        gap: 2rem;
+    }
+    .USM,
+    .USMP,
+    .USMY{
+        filter: grayscale(0);
+    }
+    .texte-image-rl-main,
+    .texte-image-rl-purple,
+    .texte-image-rl-aca{
+        color: white;
+        animation: none;
+        opacity: 1;
+    }
+    a{
+        text-decoration: none!important;
+    }
+}
+
+
+

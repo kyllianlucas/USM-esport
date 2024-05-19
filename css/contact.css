@@ -1,0 +1,31 @@
+body {
+    background: url(/asset/img/bg1.png);
+    background-size: cover;
+    color: #FFF;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-attachment: fixed;
+}
+
+.container-prim {
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.text-center {
+    color: #FFF;
+}
+
+p{
+    color: white!important;
+}
+
+.container{
+    margin-top: -2%!important;
+}
+
+@media (max-width :600px) {
+    body{
+        background: black!important;
+    }
+}

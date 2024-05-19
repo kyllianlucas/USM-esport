@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(/asset/img/bg1.png);
+    background-size: cover;
+    color: #FFF;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-attachment: fixed;
+}
+
+.container-prim {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.data-container {
+    display: flex;
+    justify-content: space-between;
+    width: 110%;
+}
+
+.data-column {
+    flex: 1;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.annee{
+    color: white;
+    margin-top: 15%!important;
+    text-align: center;
+}
+
+.palmares-nom {
+    font-weight: bold;
+    color: white;
+}
+
+.or {
+    color: gold;
+}
+
+.argent {
+    color: silver;
+}
+
+.bronze {
+    color: #cd7f32; /* Couleur bronze */
+}
+
+@media (max-width: 600px) {
+    body {
+        background: black!important;
+    }
+    .columns-container {
+        flex-direction: column; /* Les colonnes passent en affichage vertical */
+    }
+    .column {
+        width: 90%; /* Les colonnes occupent 90% de l'espace pour être pleinement visibles */
+        margin-bottom: 20px; /* Espacement entre les colonnes */
+    }
+    .palmares-nom {
+        margin-top: 0%;
+    }
+}

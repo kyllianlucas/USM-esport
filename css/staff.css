@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(/asset/img/bg1.png);
+    background-size: cover;
+    color: #FFF;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-attachment: fixed;
+}
+
+.container-prim {
+    width: 100%;
+    text-align: center;
+}
+
+.staff-list {
+    margin-top: 75px;
+    display: inline-flex;
+    flex-wrap: wrap; /* Pour passer à une disposition en ligne sur les petits écrans */
+    justify-content: center; /* Pour centrer les éléments sur les petits écrans */
+}
+
+.staff-pic {
+    background: #ff0a1e;
+    width: 200px;
+    height: 500px;
+    margin: 10px;
+    border-radius: 50px;
+}
+
+.staffs {
+    background: url(/asset/img/USM_staff.png);
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(1);
+    border: solid 1px grey;
+    transition: all 1.5s;
+}
+
+.staffs:hover,
+.streamers:hover  {
+    filter: grayscale(0);
+    border: solid 1px #010e1f ;
+    box-shadow: 0 0 20px #010e1f ;
+}
+
+.texte-image-staff,
+.texte-image-streamer{
+    color: white;
+    opacity: 0;
+    animation: fadeOut 0.3s ease-out;
+}
+
+.staff-pic:hover .texte-image-staff,
+.staff-pic:hover .texte-image-streamer{
+    animation: fadeIn 0.2s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut{
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.streamers {
+    background: url(/asset/img/USM_streamer.png);
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(1);
+    border: solid 1px grey;
+    transition: all 1.5s;
+}
+a{
+    text-decoration: none!important;
+}
+
+
+@media (max-width: 600px) {
+body{
+    background: black!important;
+}
+
+    .staff-pic{
+        width: 100vw;
+        border-radius: 0;
+        margin: 0;
+    }
+    .staff-list{
+        gap: 2rem;
+    }
+    
+    .staffs,
+    .streamers{
+        filter: grayscale(0);
+    }
+
+    .texte-image-staff,
+    .texte-image-streamer{
+        color: red;
+        animation: none;
+        opacity: 1;
+    }
+}

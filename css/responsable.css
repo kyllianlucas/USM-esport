@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(/asset/img/bg1.png);
+    background-size: cover;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-attachment: fixed;
+}
+
+.container-prim {
+    width: 100%;
+    text-align: center;
+}
+
+.list-group {
+    flex-direction: row!important;
+    flex-wrap: wrap; /* Pour passer à une disposition en ligne sur les petits écrans */
+    justify-content: center; /* Pour centrer les éléments sur les petits écrans */
+    margin-top: 2%;
+}
+
+.list-group-second {
+    display: inline-flex;
+    flex-direction: row!important;
+    flex-wrap: wrap; /* Pour passer à une disposition en ligne sur les petits écrans */
+    justify-content: center; /* Pour centrer les éléments sur les petits écrans */
+}
+
+ul {
+    padding-left: 0!important;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+.list-group-item {
+    background: #012354!important;
+    width: 200px;
+    height: 310px;
+    border-radius: 50px!important;
+    border: solid 1px #010e1f!important;
+    margin: 15px;
+    opacity: 0.9;
+}
+
+.resp-logo {
+    margin-top: -11%;
+}
+
+.resp-spot {
+    color: white;
+    font-style: italic!important;
+}
+
+.resp-name {
+    font-family: OCR A Std, monospace;
+    margin: 5px;
+    color: #FFF ;
+}
+
+.resp-pic-img {
+    margin-top: 5%;
+    max-width: 100px;
+}
+
+.resp-pic-logo {
+    max-width: 141px;
+    margin-top: 3%;
+}
+
+.network-staff {
+    margin: 15px;
+    transition: all 1s;
+}
+
+.network-staff:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.40);
+}
+
+/* Définissez la couleur pour les icônes */
+.network-staff-twitter,
+.network-staff-twitch {
+    color: currentColor!important;
+}
+
+@media (max-width: 600px) {
+    body{
+        background: black!important;
+    }
+    .list-group-second {
+        margin-top: 0%;
+    }
+    .list-group-item {
+        width: 177px;
+        height: 200px;
+        margin: 5px!important;
+        padding: 4rem!important;
+        display: flex!important;
+        border-radius: 25px!important;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .resp-pic-logo {
+        max-width: 75px;
+    }
+    .resp-pic-img {
+        max-width: 50px;
+    }
+    .resp-logo {
+        display: flex;
+        gap: 7rem;
+        margin-top: -100%;
+    }
+}

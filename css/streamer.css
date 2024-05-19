@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(/asset/img/bg1.png);
+    background-size: cover;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-attachment: fixed;
+}
+
+.container-prim {
+    width: 100%;
+    text-align: center;
+}
+.list-group {
+    flex-direction: row!important;
+    flex-wrap: wrap; /* Pour passer à une disposition en ligne sur les petits écrans */
+    justify-content: center; /* Pour centrer les éléments sur les petits écrans */
+    margin-top: 2%;
+}
+
+.list-group-second{
+    display: inline-flex;
+    flex-direction: row!important;
+    flex-wrap: wrap; /* Pour passer à une disposition en ligne sur les petits écrans */
+    justify-content: center; /* Pour centrer les éléments sur les petits écrans */
+}
+
+ul{
+    padding-left: 0!important;
+}
+
+a{
+    text-decoration: none!important;
+}
+
+.list-group-item {
+    background: #012354!important;
+    width: 200px;
+    height: 300px;
+    border-radius: 50px!important;
+    border: solid 1px #010e1f!important;
+    margin: 15px;
+    opacity: 0.9;
+}
+
+.streameur-logo {
+    margin-top: -7%;
+}
+
+.streameur-name {
+    font-family: OCR A Std, monospace;
+    margin: 5px;
+    color: #FFF ;
+}
+
+.streameur-pic-logo{
+    max-width: 165px;
+}
+
+.streameur-pic-img{
+    max-width: 120px;
+}
+
+.network-streameur {
+    margin: 15px;
+    color: #ff0a1e ;
+    transition: all 1s;
+}
+
+.network-streameur:hover {
+    color: #dddddd;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.40);
+}
+
+@media (max-width: 600px) {
+    body{
+        background: black!important;
+    }
+    .list-group-second{
+        margin-top: -6%;
+    }
+    .list-group-item{
+        width: 177px;
+        height: 200px;
+        margin: 5px!important;
+        padding: 4rem!important;
+        display: flex!important;
+        border-radius: 25px!important;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .streameur-pic-logo{
+        max-width: 75px;
+    }
+    .streameur-pic-img{
+        max-width: 50px;
+    }
+    .streameur-logo{
+        display: flex;
+        gap: 7rem;
+        margin-top: -37%;
+    }
+}

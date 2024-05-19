@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(/asset/img/bg1.png);
+    background-size: cover;
+    color: #FFF;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-attachment: fixed;
+}
+
+.container-prim {
+    width: 100%;
+    text-align: center;
+}
+
+.palmares-list {
+    margin-top: 75px;
+    display: inline-flex;
+    flex-wrap: wrap; /* Pour passer à une disposition en ligne sur les petits écrans */
+    justify-content: center; /* Pour centrer les éléments sur les petits écrans */
+}
+
+.palmares-pic {
+    background: #ff0a1e;
+    width: 200px;
+    height: 500px;
+    margin: 10px;
+    border-radius: 50px;
+}
+
+.rl {
+    background: url(/asset/img/rl-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(1);
+    border: solid 1px grey;
+    transition: all 1.5s;
+}
+
+.rl:hover {
+    filter: grayscale(0);
+    border: solid 1px #010e1f ;
+    box-shadow: 0 0 20px #010e1f ;
+}
+
+.texte-image-palma-rl,
+.texte-image-palma-tft,
+.texte-image-lan{
+    color:  white;
+    opacity: 0;
+    animation: fadeOut 0.3s ease-out;
+}
+
+.palmares-pic:hover .texte-image-palma-rl,
+.palmares-pic:hover .texte-image-palma-tft,
+.palmares-pic:hover .texte-image-lan{
+    animation: fadeIn 0.2s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut{
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.tft {
+    background: url(/asset/img/tft-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(1);
+    border: solid 1px grey;
+    transition: all 1.5s;
+}
+
+.tft:hover {
+    filter: grayscale(0);
+    border: solid 1px #ff0a1e ;
+    box-shadow: 0 0 20px #ff0a1e ;
+}
+a{
+    text-decoration: none!important;
+}
+
+.lan {
+    background: url(/asset/img/GA3Fo_ybQAANRvb.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(1);
+    border: solid 1px grey;
+    transition: all 1.5s;
+}
+
+.lan:hover {
+    filter: grayscale(0);
+    border: solid 1px #220aff ;
+    box-shadow: 0 0 20px #220aff ;
+}
+
+@media (max-width: 600px) {
+    body{
+        background: black!important;
+    }
+    .palmares-pic{
+        width: 100vw;
+        border-radius: 0;
+        margin: 0;
+    }
+    .palmares-list{
+        gap: 2rem;
+    }
+    .rl,
+    .tft,
+    .lan{
+        filter: grayscale(0);
+    }
+
+    .texte-image-palma-rl,
+    .texte-image-palma-tft,
+    .texte-image-lan{
+        color: white;
+        animation: none;
+        opacity: 1;
+    }
+    a{
+        text-decoration: none!important;
+    }
+}
