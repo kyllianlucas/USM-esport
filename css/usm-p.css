@@ -57,6 +57,8 @@ ul{
 }
 
 .rl-logo {
+    display: flex;
+    justify-content: center;
     margin-top: -7%;
 }
 

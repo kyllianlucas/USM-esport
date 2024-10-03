@@ -69,6 +69,8 @@ ul{
 }
 
 .tft-logo {
+    display: flex;
+    justify-content: center;
     margin-top: -11%;
 }
 

@@ -8,7 +8,7 @@ body {
     background: url(/asset/img/bg1.png);
     background-size: cover;
     color: #FFF;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     background-attachment: fixed;
 }
 
@@ -19,9 +19,10 @@ body {
 
 .roster-list {
     margin-top: 75px;
-    display: inline-flex;
-    flex-wrap: wrap; /* Pour passer à une disposition en ligne sur les petits écrans */
-    justify-content: center; /* Pour centrer les éléments sur les petits écrans */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .roster-pic {
@@ -30,6 +31,14 @@ body {
     height: 500px;
     margin: 10px;
     border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.roster-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
 }
 
 .lol {
@@ -41,14 +50,6 @@ body {
     transition: all 1.5s;
 }
 
-.lol:hover,
-.tft:hover {
-    filter: grayscale(0);
-    border: solid 1px #ff0a1e;
-    box-shadow: 0 0 20px #ff0a1e;
-}
-
-
 .rl {
     background: url(/asset/img/rl-bg.jpg);
     background-position: center;
@@ -58,14 +59,6 @@ body {
     transition: all 1.5s;
 }
 
-.rl:hover,
-.valo:hover {
-    filter: grayscale(0);
-    border: solid 1px #010e1f;
-    box-shadow: 0 0 20px #010e1f;
-}
-
-
 .tft {
     background: url(/asset/img/tft-bg.jpg);
     background-position: center;
@@ -73,24 +66,6 @@ body {
     filter: grayscale(1);
     border: solid 1px grey;
     transition: all 1.5s;
-}
-
-.texte-image-lol,
-.texte-image-rl ,
-.texte-image-tft, 
-.texte-image-valo  {
-    color: white!important;
-    opacity: 0;
-    animation: fadeOut 0.3s ease-out;
-}
-
-.roster-pic:hover .texte-image-lol ,
-.roster-pic:hover .texte-image-rl,
-.roster-pic:hover .texte-image-tft, 
-.roster-pic:hover .texte-image-valo {
-    animation: fadeIn 0.2s ease-in;
-    animation-fill-mode: forwards;
-    color: white;
 }
 
 .valo {
@@ -102,6 +77,34 @@ body {
     transition: all 1.5s;
 }
 
+.lol:hover, .tft:hover {
+    filter: grayscale(0);
+    border: solid 1px #ff0a1e;
+    box-shadow: 0 0 20px #ff0a1e;
+}
+
+.rl:hover, .valo:hover {
+    filter: grayscale(0);
+    border: solid 1px #010e1f;
+    box-shadow: 0 0 20px #010e1f;
+}
+
+.texte-image-lol, .texte-image-rl, .texte-image-tft, .texte-image-valo {
+    color: white !important;
+    opacity: 0;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-out;
+}
+
+.roster-pic:hover .texte-image-lol, .roster-pic:hover .texte-image-rl, .roster-pic:hover .texte-image-tft, .roster-pic:hover .texte-image-valo {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+    color: white;
+}
+
 @keyframes fadeOut {
     0% { opacity: 1; }
     100% { opacity: 0; }
@@ -111,35 +114,28 @@ body {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
-a{
-    text-decoration: none!important;
+
+a {
+    text-decoration: none !important;
 }
 
 @media (max-width: 600px) {
-    body{
-        background: black!important;
+    body {
+        background: black !important;
     }
-    .roster-pic{
+    .roster-pic {
         width: 100vw;
         border-radius: 0;
         margin: 0;
     }
-    .roster-list{
+    .roster-list {
         gap: 2rem;
     }
-    .lol,
-    .rl,
-    .tft,
-    .valo{
+    .lol, .rl, .tft, .valo {
         filter: grayscale(0);
     }
-
-    .texte-image-lol,
-    .texte-image-rl,
-    .texte-image-tft,
-    .texte-image-valo{
+    .texte-image-lol, .texte-image-rl, .texte-image-tft, .texte-image-valo {
         color: red;
-        animation: none;
         opacity: 1;
     }
 }

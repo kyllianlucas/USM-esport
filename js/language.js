@@ -24,7 +24,7 @@ const translations = {
         'Europe': 'Européen',
         'Commu': 'Communautaire',
         'Processus': 'L\'eSport en mode 200 iq c\'est ici !',
-        'LMN8': 'L’équipementier eSport & Gaming Français ',
+        'LMN8': 'L équipementier eSport & Gaming Français ',
         'Boutique': 'Accès boutique:',
         'Contact': 'Nous contacter',
         'Pseudo': 'Pseudo',
@@ -45,7 +45,7 @@ const translations = {
         'Contact': 'Contact',
         'Index': 'We are an eSports association, established under the 1901 law since 2020, based in Nyons in Drôme (26).\nWe participate in numerous French & European tournaments with the aim of shining our players at the highest possible level! We detect and support players with high potential to prepare them for the professional world of eSports.',
         'Coach-1': 'Mental Coach',
-        'Coach-2': 'Assistant Coach ',
+        'Coach-2': 'Assistant Coach',
         'Staff': 'Responsible',
         'Fonda': 'CEO - Founder',
         'Fondateur': 'Right arm',
@@ -72,69 +72,48 @@ const translations = {
 
 // Fonction pour obtenir la traduction en fonction de la langue cible et de la clé de traduction
 function getTranslation(key, language) {
-    // Vérifie si la clé de traduction existe pour la langue donnée
     if (translations[language] && translations[language][key]) {
         return translations[language][key];
     } else {
-        // Si la clé de traduction n'existe pas, retourne la clé elle-même
-        return key;
+        return key; // Retourne la clé si la traduction n'existe pas
     }
 }
 
 // Fonction de changement de langue
 function changeLanguage(language) {
     // Obtenez tous les éléments qui nécessitent une traduction
-    var elementsToTranslate = document.querySelectorAll('[data-lang]');
+    const elementsToTranslate = document.querySelectorAll('[data-lang]');
 
     // Parcourez ces éléments
     elementsToTranslate.forEach(function(element) {
-        // Obtenez la clé de traduction à partir de l'attribut data-lang
-        var key = element.getAttribute('data-lang');
-
-        // Obtenez le texte traduit en fonction de la clé et de la langue
-        var translatedText = getTranslation(key, language);
-
-        // Modifiez le texte de l'élément
-        element.innerText = translatedText;
+        const key = element.getAttribute('data-lang'); // Obtenez la clé de traduction
+        const translatedText = getTranslation(key, language); // Obtenez le texte traduit
+        element.innerText = translatedText; // Modifiez le texte de l'élément
     });
 }
 
 // Fonction pour traduire les placeholders
 function translatePlaceholders(language) {
     // Obtenez tous les éléments d'entrée qui ont un attribut placeholder
-    var inputElements = document.querySelectorAll('input[placeholder][data-placeholder-lang], textarea[placeholder][data-placeholder-lang]');
+    const inputElements = document.querySelectorAll('input[placeholder][data-placeholder-lang], textarea[placeholder][data-placeholder-lang]');
 
     // Parcourez ces éléments
-    inputElements.forEach(function(element) {
-        // Obtenez la clé de traduction du placeholder à partir de l'attribut data-placeholder-lang
-        var key = element.getAttribute('data-placeholder-lang');
-
-        // Obtenez le placeholder traduit en fonction de la clé et de la langue
-        var translatedPlaceholder = getTranslation(key, language);
-
-        // Modifiez le placeholder de l'élément
-        element.setAttribute('placeholder', translatedPlaceholder);
+    inputElements.forEach(function(input) {
+        const key = input.getAttribute('data-placeholder-lang'); // Obtenez la clé de placeholder
+        const translatedPlaceholder = getTranslation(key, language); // Obtenez le placeholder traduit
+        input.placeholder = translatedPlaceholder; // Modifiez le placeholder
     });
 }
 
-// Appelez la fonction pour traduire les placeholders lorsque la page se charge initialement
+// Écouteur d'événements pour changer la langue
 document.addEventListener('DOMContentLoaded', function() {
-    changeLanguage('fr'); // Traduction initiale en français
-    translatePlaceholders('fr');
-});
-
-// Ajoutez des écouteurs d'événements pour changer la langue
-document.querySelector('.english-flag').addEventListener('click', function(event) {
-    changeLanguage('en');
-    translatePlaceholders('en');
-});
-
-document.querySelector('.flag-link').addEventListener('click', function(event) {
-    changeLanguage('fr');
-    translatePlaceholders('fr');
-});
-
-document.querySelector('.dropdown-menu .flag-link').addEventListener('click', function(event) {
-    changeLanguage('fr');
-    translatePlaceholders('fr');
+    // Assurez-vous que le code ne se lance qu'une fois le DOM chargé
+    const englishFlag = document.querySelector('.english-flag');
+    if (englishFlag) {
+        englishFlag.addEventListener('click', function(event) {
+            event.preventDefault(); // Empêche le comportement par défaut de l'ancre
+            changeLanguage('en'); // Change la langue à l'anglais
+            translatePlaceholders('en'); // Traduisez également les placeholders
+        });
+    }
 });

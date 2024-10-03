@@ -62,7 +62,7 @@
             <br>
             <ul class="list-group-second">
                 <li class="list-group-item">
-                    <img src="./asset/img/zoob.png" alt="ZeGuillotin" class="rl-pic-img">
+                    <img src="./asset/img/zoob.png" alt="ZeGuillotin" class="rl-pic-img-b">
                     <h3 class="rl-name">Zoob</h3>
                     <h3 class="rl-poste">Manager</h3>
                     <br>

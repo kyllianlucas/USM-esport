@@ -60,6 +60,8 @@ ul{
 }
 
 .valo-logo {
+    display: flex;
+    justify-content: center;
     margin-top: -11%;
 }
 

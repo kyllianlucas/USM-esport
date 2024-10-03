@@ -49,6 +49,8 @@ a {
 }
 
 .resp-logo {
+    display: flex;
+    justify-content: center;
     margin-top: -11%;
 }
 

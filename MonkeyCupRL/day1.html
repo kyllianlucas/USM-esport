@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Cup - Day 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Monkey Cup - Day 1</h1>
+        <nav>
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="reglement.html">Règlement</a></li>
+                <li><a href="equipe.php">Equipes</a></li>
+                <li class="dropdown">
+                    <a href="etapes.html" class="dropbtn">Étapes</a>
+                    <div class="dropdown-content">
+                        <a href="day1.html">Day 1</a>
+                        <a href="day2.html">Day 2</a>
+                        <a href="day3.html">Day 3</a>
+                        <a href="day4.html">Day 4</a>
+                    </div>
+                </li>
+                <li><a href="#">Classements</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Day 1 : Arbre à double élimination (64 équipes)</h2>
+            <div id="tournament-bracket" class="tournament-bracket">
+                <?php
+                $teams = include('equipe.php'); // Inclure le fichier des équipes
+
+                function createBracket($teams) {
+                    $numTeams = count($teams);
+                    $numRounds = ceil(log($numTeams, 2)) * 2; // Nombre de tours nécessaires pour la double élimination
+                    echo '<div class="bracket">';
+                    for ($round = 1; $round <= $numRounds; $round++) {
+                        echo '<div class="round round-' . $round . '">';
+                        $numMatches = $numTeams / (2 ** ceil($round / 2));
+                        for ($match = 1; $match <= $numMatches; $match++) {
+                            $team1 = isset($teams[$match - 1]) ? $teams[$match - 1] : "TBD";
+                            $team2 = isset($teams[$numTeams - $match]) ? $teams[$numTeams - $match] : "TBD";
+                            echo '<div class="match">';
+                            echo '<div class="team team-1">' . $team1 . '</div>';
+                            echo '<div class="team team-2">' . $team2 . '</div>';
+                            echo '</div>';
+                        }
+                        echo '</div>';
+                    }
+                    echo '</div>';
+                }
+
+                createBracket($teams);
+                ?>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 USM eSport</p>
+        <div class="social-links">
+            <a href="https://www.twitch.tv/usmesport" target="_blank">Twitch</a>
+            <a href="https://www.youtube.com/channel/usmesport" target="_blank">YouTube</a>
+            <a href="https://twitter.com/usmesport" target="_blank">Twitter</a>
+            <a href="https://discord.gg/usmesport" target="_blank">Discord</a>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

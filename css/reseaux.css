@@ -4,13 +4,14 @@
     padding: 0;
 }
 
-
 body {
     background: url(/asset/img/bg1.png);
     background-size: cover;
     color: #FFF;
     font-family: 'Noto Sans JP', sans-serif;
     background-attachment: fixed;
+    /* Ajout d'un dégradé pour un effet plus dynamique */
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url(/asset/img/bg1.png);
 }
 
 .container-prim {
@@ -18,64 +19,107 @@ body {
     text-align: center;
 }
 
-a{
-    text-decoration: none!important;
-    color: white!important;
+a {
+    text-decoration: none !important;
+    color: white !important;
+    transition: all 0.3s; /* Transition plus rapide pour une sensation de réactivité */
 }
-ul{
-    padding-left: 0!important;
+
+ul {
+    padding-left: 0 !important;
     list-style-type: none;
 }
 
 .list-group {
     margin-top: 50px;
-    flex-wrap: wrap; /* Pour passer à une disposition en ligne sur les petits écrans */
-    justify-content: center; /* Pour centrer les éléments sur les petits écrans */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-
-.list-group-item{
+.list-group-item {
     margin: 10px auto;
     margin-top: 2%;
     width: 350px;
     height: 50px;
-    border-radius: 50px!important;
-    border: solid 1px #dddddd!important;
-    color: white!important;
-    transition: all 1.5s;
+    border-radius: 20px !important; /* Bordures moins arrondies pour un look plus moderne */
+    border: solid 2px #ff0a1e !important; /* Couleur de bordure plus vive */
+    color: white !important;
+    transition: all 0.3s;
     font-family: 'Noto Sans JP';
     font-size: 22px;
-    background: transparent!important;
+    background: rgba(1, 35, 84, 0.8) !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Ajout d'une ombre */
 }
 
 .list-group-item:hover {
-    background: #012354!important;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    background: rgba(1, 35, 84, 0.9) !important;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8) !important; /* Effet de néon rouge */
+    transform: scale(1.05);
 }
 
-.logo-reseaux{
+/* Ajout d'un effet de lumière néon sur les items */
+.list-group-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 0, 0, 0.2);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+    pointer-events: none;
+}
+
+.list-group-item:hover::before {
+    background: rgba(255, 0, 0, 0.5);
+    top: -30%;
+    left: -30%;
+}
+
+.logo-reseaux {
     padding-right: 2%;
     padding-bottom: 1%;
 }
 
+/* Effet de pulsation pour un style esports */
+.list-group-item:hover {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
+}
+
 @media (max-width: 600px) {
-    body{
-        background: black!important;
+    body {
+        background: black !important;
     }
-    .list-group{
+    .list-group {
         display: flex;
-        flex-direction: row!important;
+        flex-direction: row !important;
     }
-    .list-group-item{
+    .list-group-item {
         width: 177px;
         height: 200px;
-        margin: 5px!important;
-        padding: 0rem!important;
-        display: flex!important;
-        border-radius: 25px!important;
+        margin: 5px !important;
+        padding: 0 !important;
+        display: flex !important;
+        border-radius: 25px !important;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: #012354!important;
+        background: #012354 !important;
     }
 }

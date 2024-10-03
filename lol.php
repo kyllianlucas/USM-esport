@@ -82,7 +82,7 @@
             </ul>
             <ul class="list-group-second">
                 <li class="list-group-item">
-                    <img src="./asset/img/logo.png" alt="ZeGuillotin" class="lol-pic-logo">
+                    <img src="./asset/img/logo.png" alt="ZeGuillotin" class="lol-pic-logo-b">
                     <h3 class="lol-name">---</h3>
                     <h3 class="lol-poste">---</h3>
                     <br>
@@ -91,7 +91,7 @@
                     </div>
                </li>
                <li class="list-group-item">
-                    <img src="./asset/img/logo.png" alt="ZeGuillotin" class="lol-pic-logo">
+                    <img src="./asset/img/logo.png" alt="ZeGuillotin" class="lol-pic-logo-b">
                     <h3 class="lol-name">---</h3>
                     <h3 class="lol-poste">---</h3>
                     <br>
@@ -100,7 +100,7 @@
                     </div>
                </li>
                <li class="list-group-item">
-                    <img src="./asset/img/logo.png" alt="ZeGuillotin" class="lol-pic-logo">
+                    <img src="./asset/img/logo.png" alt="ZeGuillotin" class="lol-pic-logo-b">
                     <h3 class="lol-name">---</h3>
                     <h3 class="lol-poste" data-lang="Coach-1">---</h3>
                     <br>
@@ -109,7 +109,7 @@
                     </div>
                </li>
                <li class="list-group-item">
-                    <img src="./asset/img/logo.png" alt="ZeGuillotin" class="lol-pic-logo">
+                    <img src="./asset/img/logo.png" alt="ZeGuillotin" class="lol-pic-logo-b">
                     <h3 class="lol-name">---</h3>
                     <h3 class="lol-poste" data-lang="Coach-2">---</h3>
                     <br>

@@ -60,6 +60,11 @@ ul{
     max-width: 155px;
 }
 
+.lol-pic-logo-b {
+    max-width: 155px;
+    margin-left: 10%;
+}
+
 .lol-name {
     font-family: OCR A Std, monospace;
     margin: 5px;
@@ -73,7 +78,9 @@ ul{
     font-style: italic;
 }
 .lol-logo {
-    margin-top: -8%;
+    display: flex;
+    justify-content: center;
+    margin-top: -11%;
 }
 
 .network-lol {

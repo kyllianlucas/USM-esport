@@ -11,73 +11,119 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
     background-attachment: fixed;
     margin-bottom: 20px;
+    /* Ajout d'un dégradé pour un effet plus dynamique */
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url(/asset/img/bg1.png);
 }
 
 .container-prim {
     width: 100%;
     text-align: center;
 }
+
 a {
     text-decoration: none;
     color: #FFF;
-    transition: all 1.5s;
+    transition: all 0.3s; /* Transition plus rapide pour une sensation de réactivité */
 }
 
 a:hover {
-    color: #ff0a1e ;
-    text-shadow: 0 0 20px rgba(255, 0, 0, 0.521);
+    color: #ff0a1e;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
 }
 
 ul {
     list-style-type: none;
-}   
+}
 
 .index-home {
     margin-top: 55px;
     margin-bottom: 30px;
     color: #fff;
-    font-family: Impact, fantasy;
+    font-family: 'Orbitron', sans-serif; /* Police plus "esport" */
+    font-size: 2em; /* Taille de police augmentée pour un impact visuel */
 }
 
 .item-accueil {
     text-decoration: none;
     margin: 30px auto;
-    width: 1200px;
-    height: 150px;
+    width: 1000px; /* Réduction de la largeur pour une meilleure adaptabilité */
+    max-width: 90%;
+    height: 200px; /* Augmentation de la hauteur pour un design plus spacieux */
     line-height: 2.3;
-    border-radius: 50px;
-    border: solid 1px #dddddd;
-    transition: all 1.5s;
+    border-radius: 20px; /* Bordures moins arrondies pour un look plus moderne */
+    border: solid 2px #ff0a1e; /* Couleur de bordure plus vive */
+    transition: all 0.3s;
     color: #fff;
-    font-family: 'Noto Sans JP';
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 21px;
-    background: #012354;
-    opacity: 0.8;
+    background: rgba(1, 35, 84, 0.8);
+    opacity: 0.9;
+    position: relative; /* Pour permettre l'ajout d'effets supplémentaires */
+    overflow: hidden; /* Cache les éléments qui dépassent */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Ajout d'une ombre */
 }
 
 .item-accueil:hover {
-
     background: #012354;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* Effet de néon rouge */
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
 }
 
-.twitter{
+/* Ajout d'un effet de lumière néon sur les items */
+.item-accueil::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 0, 0, 0.2);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+    pointer-events: none;
+}
+
+.item-accueil:hover::before {
+    background: rgba(255, 0, 0, 0.5);
+    top: -30%;
+    left: -30%;
+}
+
+/* Effet de pulsation pour un style esports */
+.item-accueil:hover {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
+}
+
+.twitter {
     padding-left: 35%;
 }
 
-@media (max-width :600px) {
-    body{
-        background: black!important;
+@media (max-width: 600px) {
+    body {
+        background: black !important;
     }
-    .item-accueil{
+    .item-accueil {
         width: auto;
-        height: 500px;
-        background: none;
+        height: auto;
+        background: rgba(1, 35, 84, 0.8);
+        padding: 20px; /* Ajout d'un padding pour un contenu plus aéré */
     }
     .item-accueil:hover {
-        background: none;
+        background: rgba(1, 35, 84, 0.9);
     }
-    .twitter{
-        padding-left: 0%;
+    .twitter {
+        padding-left: 0;
     }
 }
